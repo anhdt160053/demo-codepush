@@ -31,33 +31,31 @@ public class MainApplication extends Application implements ReactApplication {
       //   @Override
       //   protected List<ReactPackage> getPackages() {
       //     return Arrays.<ReactPackage>asList(
-      //     new MainReactPackage(),
-            // new AppCenterReactNativeCrashesPackage(getApplication(), getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)),
-            // new AppCenterReactNativeAnalyticsPackage(getApplication(), getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
-            // new AppCenterReactNativePackage(getApplication())
+      //       new MainReactPackage(),
+      //       new AppCenterReactNativeCrashesPackage(getApplication(), getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)),
+      //       new AppCenterReactNativeAnalyticsPackage(getApplication(), getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
+      //       new AppCenterReactNativePackage(getApplication())
       //     , new VectorIconsPackage()
       //   );
       //  }
 
         @Override
         protected List<ReactPackage> getPackages() {
-          @SuppressWarnings("UnnecessaryLocalVariable")
+          // @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-            packages.add(new AppCenterReactNativeCrashesPackage(MainApplication.this, getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)));
-            packages.add(new AppCenterReactNativeAnalyticsPackage(MainApplication.this, getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)));
-            packages.add(new AppCenterReactNativePackage(MainApplication.this));
-
+          // packages.add(new LottiePackage());
           return packages;
         }
+
 
         @Override
         protected String getJSMainModuleName() {
           return "index";
         }
 
-        @Override
+         @Override
         protected String getJSBundleFile() {
             return CodePush.getJSBundleFile();
         }
